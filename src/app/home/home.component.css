@@ -1,0 +1,96 @@
+/* nav bar */
+.nav-head{
+    width: 100%;
+    height: 3em; 
+    border: 0px solid grey;
+    position: relative;
+    border-radius: 6px;
+}
+/* slider position */
+.home-slider{
+    width: 96%;
+    height: 60vh;
+    border: 1.5px solid rgb(240, 199, 138);
+    border-radius: 6px;    
+    margin-left: 2%;
+    margin-right: 2%;   
+    background-color:#000000;
+    background-image:url('../../assets/images/slide4a.jpg');
+    background:linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url('../../assets/images/slide4a.jpg');
+    background-position:left top;
+    background-attachment:inherit;
+    background-size:cover;
+}
+/* body */
+.home-body{
+    width: 100%;
+    min-height: 25vh;
+    max-height: auto;
+    border: 1.5px solid rgb(138, 240, 169);
+    border-radius: 6px;
+}
+
+.international{
+    background-color: whitesmoke;
+    border-radius: 6px;
+    min-height: 20vh;
+}
+.private{
+    background-color: whitesmoke;    
+    border-radius: 6px;
+    min-height: 20vh
+}
+.public{
+    background-color: whitesmoke;    
+    border-radius: 6px;
+    min-height: 20vh
+}
+.body-title{
+    background-color: rgb(209, 234, 240);
+    text-align: left;
+    text-transform: capitalize;    
+    text-shadow: 10em;
+    border-radius: 3px;
+    width: 80%;
+    margin-left: 3%;
+    margin-right: 10%;    
+}
+/* transparency of the slider portion */
+.transparent{
+    /* background-color: transparent !important; */
+    background: rgba(204, 108, 95, 0.6);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    margin-left: 3%;
+    margin-right: 3%; 
+    height: 25vh;   
+  }
+/* seach autocomplite form */
+  example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;    
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .statis{
+      background-color: rgb(209, 234, 240);
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 5em;
+  }
+  .caption{
+    background: rgba(204, 108, 95, 0.6);
+    color: white;
+    width: 30%;
+    margin-top: 5vh;
+    margin-left: 3%;
+  }
+  .adv-btn{
+    margin-left: 3%;
+  }

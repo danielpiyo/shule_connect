@@ -1,0 +1,108 @@
+
+<div>
+   <div class="nav-head" fxLayout="column">
+    <div fxLayout="row" fxLayoutGap="2%" fxLayout.lt-sm="column">
+      <div fxFlex="25"><img src="../../assets/images/logo.png" alt="" height="100"></div>
+      <div fxFlex="25"></div>
+      <div fxFlex="10"></div>
+      <div fxFlex="10"></div>
+      <div fxFlex="10"></div>
+      <div fxFlex="10"></div>
+      <div fxFlex="10"></div>
+    </div>
+   </div>
+    <br>
+   <div class="home-slider"> 
+       <mat-card class="caption">Know the name of School?
+        <form class="example-form">
+          <mat-form-field class="example-full-width" >
+            <input type="text" placeholder="Search here" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+       </mat-card> <br>
+       <div class="adv-btn">
+        <button mat-fab color="primary" (click)="advanced_search()">Advance.... Search</button>
+      </div>
+
+               
+      
+        <mat-card  fxLayout="column" class="transparent" *ngIf="state=='advanced'">
+          <div fxLayout="row" fxLayoutGap="2%" fxLayout.lt-sm="column">
+              <div style="height: 20vh;" fxFlex="40">
+                <ngx-charts-pie-chart
+                [scheme]="colorScheme"
+                [results]="single"        
+                [explodeSlices]="explodeSlices"
+                [labels]="showLabels"
+                [doughnut]="doughnut"
+                [gradient]="gradient"
+                (select)="onSelect($event)">
+            </ngx-charts-pie-chart>  
+              </div>
+              <div fxFlex="20"></div>
+              <div fxFlex="20"></div>
+              <div fxFlex="20"></div>
+          </div>
+      </mat-card>
+      
+   </div>
+   <br>
+   <div class="home-body" fxLayout="column">
+              <div class="statis">Statiscis</div>
+       <mat-card fxLayout="row" fxLayoutGap="2%" fxLayout.lt-sm="column">
+        <div fxFlex="40" fxFlexOffset="2" class="public">
+           <div class="body-title">Private Schools</div> <br>
+           <ngx-charts-area-chart-stacked                     
+           [scheme]="colorScheme"
+           [results]="multi_private"
+           [gradient]="gradient"
+           [xAxis]="showXAxis"
+           [yAxis]="showYAxis"          
+           [showXAxisLabel]="showXAxisLabel"
+           [showYAxisLabel]="showYAxisLabel"
+           [xAxisLabel]="xAxisLabel"
+           [yAxisLabel]="yAxisLabel"
+           (select)="onSelect($event)"> 
+       </ngx-charts-area-chart-stacked> 
+        </div>
+        
+        <div fxFlex="60" class="international">
+            <div class="body-title">Public Schools</div> <br>
+            <ngx-charts-area-chart-stacked                     
+            [scheme]="colorScheme"
+            [results]="multi_public"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+        </ngx-charts-area-chart-stacked> 
+        </div>
+        
+       </mat-card>
+        <!-- <ngx-charts-line-chart
+            [scheme]="colorScheme"
+            [results]="analytics"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [autoScale]="autoScale"
+            [roundDomains]="roundDomains"
+            (select)="onSelect($event)">
+        </ngx-charts-line-chart>  -->
+   </div>
+</div>

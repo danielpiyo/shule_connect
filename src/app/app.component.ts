@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'schools';
+  year: any;
+
+  ngOnInit(){
+    this.year = (new Date()).getFullYear();
+  }
 }
